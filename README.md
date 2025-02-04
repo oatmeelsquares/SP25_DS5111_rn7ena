@@ -30,3 +30,11 @@ Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provid
 *Note*: If you renamed your private key to something other than `id_ed25519`, use that name instead.
 
 **Clone this repo**
+
+From the main page of this repository, scroll to the top and click the green `<> Code` dropdown. Click the SSH tab and copy the provided string.
+
+In the directory you want to clone the repo in, type `git clone <paste the string you copied here>`. Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory. 
+
+**Other setup**
+
+Run `init.sh` in the `setup` directory to install desired packages.
