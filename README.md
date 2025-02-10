@@ -51,6 +51,12 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 .
 ├── LICENSE
 ├── README.md
+├── env
+│   ├── bin
+│   ├── include
+│   ├── lib
+│   ├── lib64 -> lib
+│   └── pyvenv.cfg
 ├── example_data
 │   └── ygainers.csv
 ├── makefile
