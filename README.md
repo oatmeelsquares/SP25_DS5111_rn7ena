@@ -31,7 +31,8 @@ Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provid
 
 **Clone this repo**
 
-In the directory you want to clone the repo in, type `git clone git@github.com:oatmeelsquares/SP25_DS5111_rn7ena.git`. Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory. 
+In the directory you want to clone the repo in, type 
+```git clone git@github.com:oatmeelsquares/SP25_DS5111_rn7ena.git```. Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory. 
 
 **Other setup**
 
