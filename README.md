@@ -52,8 +52,6 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 ├── requirements.txt
 ├── setup
 │   └── init.sh
-├── wsjgainers.csv
-├── wsjgainers.html
 ├── ygainers.csv
 └── ygainers.html
 ```
