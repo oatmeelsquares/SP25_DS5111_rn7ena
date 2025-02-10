@@ -35,4 +35,25 @@ In the directory you want to clone the repo in, type `git clone git@github.com:o
 
 **Other setup**
 
-Run `setup/init.sh` to install desired packages.
+Run `setup/init.sh` to install desired packages. This includes the headless crhome browser and tools for a python virtual environment.
+
+To setup your virtual environemnt, run `make update` from the repository directory. This will cause a python virtual environment to be created with all of the packages listed in `requirements.txt` (currently only `pandas` and `lxml`.
+
+Run `make ygainers.csv` to test that the chrome headless browser is working. You should see `ygainers.html` and `ygainers.csv` appear in your working directory after running this command.
+
+At this point, you can run `tree --gitignore .` from the root of the repo and your output should look like this:
+
+```
+.
+├── LICENSE
+├── README.md
+├── google-chrome-stable_current_amd64.deb
+├── makefile
+├── requirements.txt
+├── setup
+│   └── init.sh
+├── wsjgainers.csv
+├── wsjgainers.html
+├── ygainers.csv
+└── ygainers.html
+```
