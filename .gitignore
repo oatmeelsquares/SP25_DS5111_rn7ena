@@ -170,3 +170,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Data that will change
+ygainers.html
+ygainers.csv
+wsjgainers.html
+wsjgainers.csv
