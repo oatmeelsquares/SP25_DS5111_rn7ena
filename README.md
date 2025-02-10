@@ -18,16 +18,16 @@ Go to your settings in GitHub, and click `SSH and GPG Keys` in the toolbar
 
 Click `New SSH key` and give it a title to match your machine
 
-Paste the public key into the text box (to find your public key, type `cat id_ed25519.pub` into your machine)
+Paste your public key into the text box (to find your public key, type `cat id_ed25519.pub`* into your machine)
 
 If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `home/.ssh` directory:
 
 ```
-ubuntu@ip-172-31-95-58:~/.ssh$ ssh -T -i id_ed25519 git@github.com
+ubuntu@ip-172-31-95-58:~/.ssh$ ssh -T -i id_ed25519* git@github.com
 Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-*Note*: If you renamed your private key to something other than `id_ed25519`, use that name instead.
+**Note*: If you renamed your private key to something other than `id_ed25519`, use that name instead.
 
 **Clone this repo**
 
@@ -35,4 +35,4 @@ In the directory you want to clone the repo in, type `git clone git@github.com:o
 
 **Other setup**
 
-Run `init.sh` in the `setup` directory to install desired packages.
+Run `setup/init.sh` to install desired packages.
