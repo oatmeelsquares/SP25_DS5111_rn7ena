@@ -23,7 +23,7 @@ Paste your public key into the text box (to find your public key, type `cat id_e
 If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `home/.ssh` directory:
 
 ```
-ubuntu@ip-172-31-95-58:~/.ssh$ ssh -T -i id_ed25519* git@github.com
+ubuntu@ip-172-31-95-58:~/.ssh$ ssh -T -i id_ed25519 git@github.com
 Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
