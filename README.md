@@ -31,9 +31,7 @@ Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provid
 
 **Clone this repo**
 
-From the main page of this repository, scroll to the top and click the green `<> Code` dropdown. Click the SSH tab and copy the provided string.
-
-In the directory you want to clone the repo in, type `git clone <paste the string you copied here>`. Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory. 
+In the directory you want to clone the repo in, type `git clone git@github.com:oatmeelsquares/SP25_DS5111_rn7ena.git`. Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory. 
 
 **Other setup**
 
