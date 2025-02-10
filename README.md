@@ -6,11 +6,11 @@ Coursework for DS 5111: Software and Automation Skills in partial fulfillment of
 
 To initialize a new vm, please follow these steps:
 
-**Access latest packages**
+### Access latest packages
 
 run `sudo apt update`
 
-**Setup ssh key**
+### Setup ssh key
 
 run `ssh-keygen -t ed25519 -C "youremail@domain.com"` and set a password if you want
 
@@ -29,7 +29,7 @@ Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provid
 
 **Note*: If you renamed your private key to something other than `id_ed25519`, use that name instead.
 
-**Clone this repo**
+### Clone this repo
 
 In the directory you want to clone the repo in, enter the command:
 ```
@@ -37,7 +37,7 @@ git clone git@github.com:oatmeelsquares/SP25_DS5111_rn7ena.git
 ```
 Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory. 
 
-**Other setup**
+### Other setup
 
 In `SP25_DS5111_rn7ena` as your working directory, run `scripts/init.sh` to install desired packages. This includes the headless crhome browser and tools for a python virtual environment.
 
