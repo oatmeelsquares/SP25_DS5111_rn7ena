@@ -51,10 +51,11 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 .
 ├── LICENSE
 ├── README.md
-├── google-chrome-stable_current_amd64.deb
+├── example_data
+│   └── ygainers.csv
 ├── makefile
 ├── requirements.txt
-├── setup
+├── scripts
 │   └── init.sh
 ├── ygainers.csv
 └── ygainers.html
