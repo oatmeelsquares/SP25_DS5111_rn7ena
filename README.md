@@ -39,11 +39,11 @@ Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory
 
 **Other setup**
 
-Run `setup/init.sh` to install desired packages. This includes the headless crhome browser and tools for a python virtual environment.
+In `SP25_DS5111_rn7ena` as your working directory, run `scripts/init.sh` to install desired packages. This includes the headless crhome browser and tools for a python virtual environment.
 
 To setup your virtual environemnt, run `make update` from the repository directory. This will cause a python virtual environment to be created with all of the packages listed in `requirements.txt` (currently only `pandas` and `lxml`.
 
-Run `make ygainers.csv` to test that the chrome headless browser is working. You should see `ygainers.html` and `ygainers.csv` appear in your working directory after running this command.
+Run `make ygainers.csv` to test that the chrome headless browser is working. You should see `ygainers.html` and `ygainers.csv` appear in your working directory after running this command. `ygainers.csv` should look the same as `example_data/ygainers.csv`, although the numbers will change every day.
 
 At this point, you can run `tree --gitignore .` from the root of the repo and your output should look like this:
 
