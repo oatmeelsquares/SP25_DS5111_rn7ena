@@ -1,0 +1,102 @@
+''' This module loads csv files in a standard format for processing gainers data.
+
+    Functions:
+        read_gainers() Given a path to a .csv file, loads it in standard format
+
+    If run directly with the path to a .csv as argument, this file will produce a
+    normalized .csv with '_norm' appended to the filename
+'''
+
+
+import sys
+import pandas as pd
+
+## Use Case 2: Load a csv in standard format
+def read_gainers(filename):
+    ''' Given a path to a .csv file, loads it in standard format:
+
+    headers:
+       - 'symbol'                # the symbol used in the stock market for this company
+       - 'price'                 # the current price, or last traded price of the stock
+       - 'price_change'          # the change in $s since the last trading day's closing value
+       - 'price_percent_change'  # the change expressed as % since last trading day's closing value
+
+    input:
+        str filename path to .csv file
+
+    output:
+        pd.DataFrame in standard format
+    '''
+    assert filename.endswith('csv'), f'Expected path to csv, got {filename}'
+    try:
+        gainers_df = pd.read_csv(filename)
+    except FileNotFoundError:
+        print('File', filename, 'does not exist. Try typing the full path')
+
+    symbol = None
+    price = None
+    price_change = None
+    price_percent_change = None
+
+    for column in gainers_df:
+        column = gainers_df[column]
+        if column.name.lower() == 'symbol':
+            symbol = column
+        elif symbol is None:
+            try:
+                possible_symbol = column.str.extract(r'\(([A-Z]{2,4})\)', expand = False)
+                if not possible_symbol.isna().all():
+                    symbol = possible_symbol
+            except AttributeError:
+                pass
+
+        if column.name in ['Price', 'Last']:
+            if column.dtype == 'O':
+                price = column.str.extract('(-?([0-9]*,)*[0-9]+.?[0-9]*)',
+                                           expand = False).iloc[:, 0]\
+                        .str.replace(',', '').astype('float')
+            else:
+                price = column.astype('float')
+
+        if column.name in ['Change', 'Chg']:
+            if column.dtype == 'O':
+                price_change = column.str.extract('(-?([0-9]*,)*[[0-9]+.?[0-9]*)',
+                                                  expand = False).iloc[:, 0]\
+                        .str.replace(',', '').astype('float')
+            else:
+                price_change = column.astype('float')
+
+        if column.name in ['Change %', '% Chg']:
+            if column.dtype == 'O':
+                price_percent_change = column.str.extract('(-?([0-9]*,)*[[0-9]+.?[0-9]*)',
+                                                          expand = False).iloc[:, 0]\
+                        .str.replace(',', '').astype('float')
+            else:
+                price_percent_change = column.astype('float')
+
+    new_gainers = pd.DataFrame({'symbol' : symbol,
+                                'price' : price,
+                                'price_change' : price_change,
+                                'price_percent_change' : price_percent_change},
+                               index = pd.RangeIndex(len(symbol)))
+
+    old_price = price - price_change
+    percent_change_calculated = (price - old_price) / old_price * 100
+    sym_dtype = new_gainers.symbol.dtype
+    assert ( price_percent_change - percent_change_calculated < 1 ).all(), 'Columns do not add up'
+    assert new_gainers.shape[1] == 4, new_gainers.shape
+    assert sym_dtype == 'O', f'Expected object (string) dtype but got {sym_dtype}'
+    assert new_gainers.price.dtype == \
+            new_gainers.price_change.dtype == \
+            new_gainers.price_percent_change.dtype == \
+            'float', 'Expected numeric columns'
+
+    return new_gainers
+
+## Use Case 1: Produce a new .csv with '_norm' appended to the name
+
+if __name__ == '__main__':
+
+    filename_input = sys.argv[1]
+    new_filename = filename_input.replace('.csv', '_norm.csv')
+    read_gainers(filename_input).to_csv(new_filename)

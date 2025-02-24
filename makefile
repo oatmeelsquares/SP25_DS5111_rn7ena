@@ -24,3 +24,9 @@ clean.y:
 
 clean.wsj:
 	rm wsjgainers.html wsjgainers.csv
+
+lint:
+	-. env/bin/activate; pylint bin/ tests/
+
+test: lint
+	. env/bin/activate; pytest -vv tests/
