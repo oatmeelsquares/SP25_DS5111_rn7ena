@@ -2,7 +2,7 @@
 
 Coursework for DS 5111: Software and Automation Skills in partial fulfillment of the UVA School of Data Science Master's in Data Science.
 
-## Module 3: Automating initializing a VM
+## Lab 2: Automating initializing a VM
 
 To initialize a new vm, please follow these steps:
 
@@ -23,7 +23,7 @@ Paste your public key into the text box (to find your public key, type `cat id_e
 If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `home/.ssh` directory:
 
 ```
-ubuntu@ip-172-31-95-58:~/.ssh$ ssh -T -i id_ed25519 git@github.com
+ubuntu@my-computer:~/.ssh$ ssh -T -i id_ed25519 git@github.com
 Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
@@ -49,20 +49,37 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 
 ```
 .
+.
 ├── LICENSE
 ├── README.md
-├── env
-│   ├── bin
-│   ├── include
-│   ├── lib
-│   ├── lib64 -> lib
-│   └── pyvenv.cfg
+├── bin
+│   └── normalize_csv.py
 ├── example_data
-│   └── ygainers.csv
+│   └── sample_ygainers.csv
 ├── makefile
+├── pylintrc
 ├── requirements.txt
 ├── scripts
-│   └── init.sh
-├── ygainers.csv
-└── ygainers.html
+│   └── init.sh
+└── tests
+    └── test_normalize_csv.py
 ```
+
+## Lab 3: Writing csv normalizer
+
+In this lab, I added the file `bin/normalize_csv.py`, a module that loads csv files and converts them into a standard format for processing gainers data.
+
+Functions:
+    - `read_gainers()` Given a path to a .csv file, returns a pandas DataFrame in standard format
+
+If run directly with the path to a .csv file as an argument, this module will produce a normalized .csv with `_norm` appended to the filename.
+
+## Lab 4: Testing and Linting
+
+In this lab, I:
+- added `pylint` and `pytest` to `requirements.txt
+- wrote some preliminary tests for `normalize_csv.py` in `tests/test_normalize_csv.py`
+- ensured that both .py files passed the linter with a good score*
+- updated .gitignore to exclude the gainer files
+
+*Note: I lost points on `normalize_csv.py` because I needed to refactor it, but I will save that for the Design Patterns lab. I also lost points on the imports for `test_normalize_csv.py`, but I feel like disabling those warnings will have too much possible unknown impact on future lints, so I chose to leave them.

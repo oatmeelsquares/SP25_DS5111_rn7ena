@@ -4,9 +4,9 @@
 '''
 
 import sys
+import pandas as pd
 sys.path.append('.')
 
-import pandas as pd
 import bin.normalize_csv
 
 def test_df():
