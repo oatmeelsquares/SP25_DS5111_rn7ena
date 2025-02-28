@@ -89,4 +89,8 @@ In this lab, I:
 
 ## Lab 5: GitHub Actions
 
-In this lab, I added `.github/workflows/validations.yml` and made a pull request. The action ran, but failed because it did not have access to the .csv files, so I removed them from the .gitignore.
+In this lab, I added `.github/workflows/validations.yml` and made a pull request. The action ran, but failed because it did not have access to the .csv files, so I removed them from the .gitignore, then the workflow ran successfully:
+
+[![Feature Validation](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/actions/workflows/validations.yml/badge.svg)](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/actions/workflows/validations.yml)
+
+
