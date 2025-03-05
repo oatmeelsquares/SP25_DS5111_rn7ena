@@ -3,7 +3,7 @@ from wsj import GainerDownloadWSJ, GainerProcessWSJ
 
 class GainerFactory:
     def __init__(self, choice):
-        assert choice in ['yahoo', 'wsj', 'test'], f'Unrecognized source: {source}'
+        assert choice in ['yahoo', 'wsj', 'test'], f'Unrecognized source: {choice}'
         self.choice = choice
 
     def get_downloader(self):
