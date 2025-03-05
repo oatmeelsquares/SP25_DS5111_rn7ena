@@ -19,7 +19,7 @@ class GainerDownloadWSJ(GainerDownload):
 
 class GainerProcessWSJ(GainerProcess):
     def __init__(self):
-        self.html = 'wsjgainers.html'
+        self.name = 'wsjgainers'
         self.headers = ['Unnamed: 0', 'Last', 'Chg', '% Chg']
 
     def normalize(self):

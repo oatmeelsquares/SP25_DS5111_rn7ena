@@ -15,9 +15,8 @@ class GainerDownloadYahoo(GainerDownload):
 
 class GainerProcessYahoo(GainerProcess):
     def __init__(self):
-        self.html = 'ygainers.html'
+        self.name = 'ygainers'
         self.headers = ['Symbol', 'Price', 'Change', 'Change %']
-        self.csv = 'ygainers.csv'
 
     def normalize(self):
         super().normalize()
