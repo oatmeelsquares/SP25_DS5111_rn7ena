@@ -35,7 +35,8 @@ class GainerProcess(ABC):
         test_df = self.gainers_df
         test_df['percent_change_calculated'] = percent_change_calculated
         test_df['diff'] = test_df.price_percent_change - test_df.percent_change_calculated
-        assert (self.gainers_df.price_percent_change - percent_change_calculated < 1).all(), 'Columns do not add up' + str(test_df)
+        assert (self.gainers_df.price_percent_change - percent_change_calculated < 1).all(), \
+                'Columns do not add up' + str(test_df)
 
     def normalize(self):
         gainers_df = None
@@ -48,9 +49,10 @@ class GainerProcess(ABC):
         
         if gainers_df is None:
             print(pd.read_html(self.html, flavor = 'lxml')[0], end = '\n\n\n')
-        gainers_df = gainers_df.loc[:, ['Symbol', 'Price', 'Change', 'Change %']]
+        gainers_df = gainers_df.loc[:, self.headers]
         gainers_df.columns = ['symbol', 'price', 'price_change', 'price_percent_change']
         self.gainers_df = gainers_df
 
     def save_with_timestamp(self):
-        self.gainers_df['timestamp'] = datetime.now()
+        self.stamped_csv = datetime.now().strftime('%Y%m%d-%H%M%S') + self.csv
+        self.gainers_df.to_csv(self.stamped_csv, index = False)

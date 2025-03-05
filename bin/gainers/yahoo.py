@@ -16,6 +16,8 @@ class GainerDownloadYahoo(GainerDownload):
 class GainerProcessYahoo(GainerProcess):
     def __init__(self):
         self.html = 'ygainers.html'
+        self.headers = ['Symbol', 'Price', 'Change', 'Change %']
+        self.csv = 'ygainers.csv'
 
     def normalize(self):
         super().normalize()
@@ -28,9 +30,3 @@ class GainerProcessYahoo(GainerProcess):
                 .astype('float')
 
         self.check()
-
-
-    def save_with_timestamp(self):
-        super().save_with_timestamp()
-        self.gainers_df.to_csv('ygainers.csv', index = False)
-
