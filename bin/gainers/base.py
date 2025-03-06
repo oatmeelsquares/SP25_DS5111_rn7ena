@@ -13,6 +13,14 @@ class ProcessGainer:
         self.normalizer.save_with_timestamp()
 
     def process(self):
-        self._download()
-        self._normalize()
+
+        success = False
+        while success == False:
+            try:
+                self._download()
+                self._normalize()
+                success = True
+            except ValueError as v:
+                print(f'Failed to parse tables: {v}.\nTrying again...')
+
         self._save_to_file()
