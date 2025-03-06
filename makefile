@@ -22,6 +22,9 @@ wsjgainers.csv.old: wsjgainers.html.old
 gainer:
 	.  env/bin/activate; python3 get_gainer.py $(choice)
 
+gainers:
+	. env/bin/activate; python3 get_gainer.py yahoo; python3 get_gainer.py wsj
+
 clean:
 	rm ygainers* wsjgainers*
 
