@@ -1,3 +1,5 @@
+from logger import write_log
+
 class ProcessGainer:
     def __init__(self, gainer_downloader, gainer_normalizer):
         self.downloader = gainer_downloader
@@ -21,6 +23,6 @@ class ProcessGainer:
                 self._normalize()
                 success = True
             except ValueError as v:
-                print(f'Failed to parse tables: {v}.\nTrying again...')
+                write_log(self.downloader.choice, f'Failed to parse tables: {v}.\nTrying again...')
 
         self._save_to_file()
