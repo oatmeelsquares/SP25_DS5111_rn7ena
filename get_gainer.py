@@ -2,12 +2,24 @@ import sys
 sys.path.append('./bin/gainers/')
 from base import ProcessGainer
 from factory import GainerFactory
+from datetime import datetime
 
 choice = sys.argv[1]
 
-factory = GainerFactory(choice)
-downloader = factory.get_downloader()
-normalizer = factory.get_processor()
+def get_gainer(choice, timestmap = None):
+    factory = GainerFactory(choice, timestamp)
+    downloader = factory.get_downloader()
+    normalizer = factory.get_processor()
 
-runner = ProcessGainer(downloader, normalizer)
-runner.process()
+    runner = ProcessGainer(downloader, normalizer)
+    runner.process()
+
+if choice == 'all':
+    all_sources = ['yahoo', 'wsj']
+    timestamp = datetime.now().strftime('%Y%m%d-%H%M')
+
+    for source in all_sources:
+        get_gainer(source, timestamp)
+else:
+    get_gainer(choice)
+    

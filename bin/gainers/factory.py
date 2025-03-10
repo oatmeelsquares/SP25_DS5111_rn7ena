@@ -4,10 +4,12 @@ from logger import write_log
 from datetime import datetime
 
 class GainerFactory:
-    def __init__(self, choice):
+    def __init__(self, choice, timestamp = None):
         assert choice in ['yahoo', 'wsj', 'test'], f'Unrecognized source: {choice}'
         self.choice = choice
-        self.timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
+        self.timestamp = timestamp
+        if self.timestamp is None:
+            self.timestamp = datetime.now().strftime('%Y%m%d-%H%M')
         write_log('factory', f"Initializing factory with choice '{choice}' at timestamp {self.timestamp}")
 
     def get_downloader(self):
