@@ -175,3 +175,4 @@ cython_debug/
 # Data that will change
 ygainers*
 wsjgainers*
+gainers.log
