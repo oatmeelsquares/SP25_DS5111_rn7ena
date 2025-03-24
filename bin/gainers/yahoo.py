@@ -36,6 +36,7 @@ class GainerProcessYahoo(GainerProcess):
         self.gainers_df.price_percent_change = self.gainers_df.price_percent_change\
                 .str.strip('+%')\
                 .astype('float')
+        self.gainers_df = self.gainers_df.sort_values('symbol')
 
         try:
             self.check()

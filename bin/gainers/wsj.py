@@ -35,7 +35,8 @@ class GainerProcessWSJ(GainerProcess):
 
     def normalize(self):
         super().normalize()
-        self.gainers_df.symbol = self.gainers_df.symbol.str.extract(r'\(([A-Z\.]{2,5})\)', expand = False)
+        self.gainers_df.symbol = self.gainers_df.symbol.str.extract(r'\(([A-Z\.-]{2,5})\)', expand = False)
+        self.gainers_df = self.gainers_df.sort_values('symbol')
 
         try:
             self.check()
