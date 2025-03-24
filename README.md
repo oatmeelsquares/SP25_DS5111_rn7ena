@@ -49,7 +49,6 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 
 ```
 .
-.
 ├── LICENSE
 ├── README.md
 ├── bin
@@ -61,8 +60,12 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 ├── requirements.txt
 ├── scripts
 │   └── init.sh
-└── tests
-    └── test_normalize_csv.py
+├── tests
+│   └── test_normalize_csv.py
+├── wsjgainers.csv
+├── wsjgainers.html
+├── ygainers.csv
+└── ygainers.html
 ```
 
 ## Lab 3: Writing csv normalizer
@@ -83,3 +86,11 @@ In this lab, I:
 - updated .gitignore to exclude the gainer files
 
 *Note: I lost points on `normalize_csv.py` because I needed to refactor it, but I will save that for the Design Patterns lab. I also lost points on the imports for `test_normalize_csv.py`, but I feel like disabling those warnings will have too much possible unknown impact on future lints, so I chose to leave them.
+
+## Lab 5: GitHub Actions
+
+In this lab, I added `.github/workflows/validations.yml` and made a pull request. The action ran, but failed because it did not have access to the .csv files, so I removed them from the .gitignore, then the workflow ran successfully:
+
+[![Feature Validation](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/actions/workflows/validations.yml/badge.svg)](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/actions/workflows/validations.yml)
+
+
