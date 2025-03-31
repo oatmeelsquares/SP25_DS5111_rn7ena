@@ -18,7 +18,11 @@ The data was collected from Yahoo and the Wall Street Journal gainers pages:
 
 Data was normalized using a factory design pattern. Yahoo data needed to be stripped of plus signs and WSJ symbols needed to be extracted from longer company names. Both processors returned normalized data with four fields: symbol, price, price change, and percent change.
 
-Data will be processed into intermediate tables so that data can be easily drawn. The intermediate tables include:
+Data will be processed into intermediate tables so that data can be easily drawn.
+
+## Data Tables
+
+The intermediate tables include:
 
 - RAW
     - timestamp (primary key)
@@ -39,7 +43,7 @@ Data will be processed into intermediate tables so that data can be easily drawn
 
 The RAW table will remove duplicates and the source under the assumption that if both sources have overlapping symbols, the reported numbers will be the same. This removes the possiblity of slight discrepencies based on the few-second time between scraping the two different sources.
 
-The final tables will map directly into plots, which are described in the table titles. The final tables are:
+The final tables are:
 
 - CHANGE_RATIO_SCATTER (derived from RAW)
     - price (x)
@@ -54,4 +58,4 @@ The final tables will map directly into plots, which are described in the table 
     - timestamp (grouped by day of the week)
     - AVG(avg_percent_change) as avg_percent_change
 
-Each of the final tables will produce a plot that gives direct insights into one of the four proposed questions. They describe the data in a visual way so as to gain useful insights from the raw data.
+The final tables will map directly into plots, which are described in the table titles. Each of the final tables will produce a plot that gives direct insights into one of the four proposed questions. They describe the data in a visual way so as to gain useful insights from the raw data.
