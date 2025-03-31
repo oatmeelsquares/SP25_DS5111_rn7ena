@@ -49,23 +49,51 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 
 ```
 .
+├── ERD.md
+├── ERD.mermaidjs
 ├── LICENSE
 ├── README.md
 ├── bin
-│   └── normalize_csv.py
+│   ├── gainers
+│   │   ├── __pycache__
+│   │   ├── abstractclasses.py
+│   │   ├── base.py
+│   │   ├── factory.py
+│   │   ├── logger.py
+│   │   ├── wsj.py
+│   │   └── yahoo.py
+│   └── normalize_csv.py.old
+├── crontab_clone
 ├── example_data
+│   ├── sample_wsjgainers.csv
 │   └── sample_ygainers.csv
+├── get_gainer.py
 ├── makefile
+├── projects
+│   ├── gainers
+│   │   ├── README.md
+│   │   ├── analyses
+│   │   ├── dbt_project.yml
+│   │   ├── macros
+│   │   ├── models
+│   │   │   └── example
+│   │   │       ├── my_first_dbt_model.sql
+│   │   │       ├── my_second_dbt_model.sql
+│   │   │       └── schema.yml
+│   │   ├── seeds
+│   │   ├── snapshots
+│   │   └── tests
+│   └── logs
 ├── pylintrc
 ├── requirements.txt
 ├── scripts
 │   └── init.sh
-├── tests
-│   └── test_normalize_csv.py
-├── wsjgainers.csv
-├── wsjgainers.html
-├── ygainers.csv
-└── ygainers.html
+└── tests
+    ├── fixtures.py
+    ├── test_factory.py
+    ├── test_normalize_csv.py.old
+    └── version_tests.py
+
 ```
 
 ## Lab 3: Writing csv normalizer
@@ -93,4 +121,22 @@ In this lab, I added `.github/workflows/validations.yml` and made a pull request
 
 [![Feature Validation](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/actions/workflows/validations.yml/badge.svg)](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/actions/workflows/validations.yml)
 
+## Lab 6: OOP Your Code
 
+In lab 6, I refactored my code to conform to the factory design pattern. I updated the tree diagram above to reflect the new files.
+
+## Lab 7: Collecting Data
+
+In lab 7, I added a cron job with the following code:
+
+```
+31 09 * * 1-5 cd this_repo; make gainer choice=all
+30 12 * * 1-5 cd this_repo; make gainer choice=all
+01 16 * * 1-5 cd this_repo; make gainer choice=all
+```
+
+The purpose of this code was to automatically collect gainers data three times per day, every day for at least one week. I now have many timestamped files with gainers data from my two different sources, though I have added them to the gitignore.
+
+## Lab 8: Database Design
+
+In this lab, I created ERD.md and ERD.mermaidjs to describe the structure of my snowflake database that I will use to create my dashboard. See [ERD.md](./ERD.md) for more details.
