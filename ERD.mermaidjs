@@ -1,0 +1,8 @@
+erDiagram
+    RAW }|--|| SYMBOL_STATS: "aggregates to"
+    RAW }|--|| TIME_STATS: "aggregates to"
+
+    CHANGE_RATIO_SCATTER ||--|| RAW : represents
+    BEST_TIME_BAR ||--|{ TIME_STATS_INTERMEDIATE : summarizes
+    BEST_DAY_BAR ||--|{ TIME_STATS_INTERMEDIATE : summarizes
+    TOP_FREQ_GAINERS_HIST ||--|| SYMBOL_STATS_INTERMEDIATE : represents
