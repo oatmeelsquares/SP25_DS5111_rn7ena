@@ -20,6 +20,8 @@ Data was normalized using a factory design pattern. Yahoo data needed to be stri
 
 Data will be processed into intermediate tables so that data can be easily drawn.
 
+The RAW table will remove duplicates and the source under the assumption that if both sources have overlapping symbols, the reported numbers will be the same. This removes the possiblity of slight discrepencies based on the few-second time between scraping the two different sources.
+
 ## Data Tables
 
 The intermediate tables include:
@@ -40,8 +42,6 @@ The intermediate tables include:
     - COUNT(\*) as count
     - AVG(price_change) as avg_change
     - AVG(price_percent_change) as avg_percent_change
-
-The RAW table will remove duplicates and the source under the assumption that if both sources have overlapping symbols, the reported numbers will be the same. This removes the possiblity of slight discrepencies based on the few-second time between scraping the two different sources.
 
 The final tables are:
 
