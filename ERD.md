@@ -22,6 +22,8 @@ Data will be processed into intermediate tables so that data can be easily drawn
 
 The RAW table will remove duplicates and the source under the assumption that if both sources have overlapping symbols, the reported numbers will be the same. This removes the possiblity of slight discrepencies based on the few-second time between scraping the two different sources.
 
+The final tables will map directly into plots, which are described in the table titles. Each of the final tables will produce a plot that gives direct insights into one of the four proposed questions. They describe the data in a visual way so as to gain useful insights from the raw data.
+
 ## Data Tables
 
 The intermediate tables include:
@@ -57,5 +59,3 @@ The final tables are:
 - BEST_DAY_BAR (derived from TIME_STATS)
     - timestamp (grouped by day of the week)
     - AVG(avg_percent_change) as avg_percent_change
-
-The final tables will map directly into plots, which are described in the table titles. Each of the final tables will produce a plot that gives direct insights into one of the four proposed questions. They describe the data in a visual way so as to gain useful insights from the raw data.
