@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10", "3.11"]
+        python-version: ["3.10", "3.11"] # this is good, but let's bump that to 3.12 and 3.13, our AWS machines are using 3.12 methinks
 
     steps:
       - uses: actions/checkout@v4
