@@ -1,6 +1,11 @@
 import pytest
 import sys
-sys.path.append('/home/ubuntu/SP25_DS5111_rn7ena/bin/gainers')
+sys.path.append('/home/ubuntu/SP25_DS5111_rn7ena/bin/gainers') # ouch, this is something to look out for
+# as a general rule 'no hard path coding'
+# To point out the danger here, the 'ubuntu' in the path is not just because of the OS.  It also names the user.
+# So in a work laptop that may be you, `/home/beckyd/` or something to that effect.
+# the instance this code hits a machine, say in production where that path doesn't exist, this will break.
+# So a better solution would be to use a relative path to where this executes from './bin/gainers/' for example
 
 from factory import GainerFactory
 from fixtures import choice
