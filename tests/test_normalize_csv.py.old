@@ -1,3 +1,7 @@
+# old files are ok temporarily.  Typically though, you want to keep the space clean.
+# I you think you need to refer to a file, try a `git tag`, then git remove the file.
+# If you need to refer to the file just checkout the tag.
+# not quite as convenient as having the file in the directory, but keep things tidy
 ''' This module tests the functionality of bin.normalize_csv.py
     
     Author: rn7ena@virginia.edu
