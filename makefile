@@ -20,7 +20,7 @@ wsjgainers.csv.old: wsjgainers.html.old
 	. env/bin/activate; python3 -c "import pandas as pd; raw = pd.read_html('wsjgainers.html', flavor = 'lxml'); raw[0].to_csv('wsjgainers.csv')"
 
 gainer:
-	.  env/bin/activate; python3 get_gainer.py $(choice); rm *gainers.html
+	.  env/bin/activate; python3 get_gainer.py $(choice); rm *gainers.html *gainers.csv
 
 clean:
 	rm ygainers* wsjgainers*
