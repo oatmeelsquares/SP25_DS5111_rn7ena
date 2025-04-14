@@ -20,7 +20,10 @@ wsjgainers.csv.old: wsjgainers.html.old
 	. env/bin/activate; python3 -c "import pandas as pd; raw = pd.read_html('wsjgainers.html', flavor = 'lxml'); raw[0].to_csv('wsjgainers.csv')"
 
 gainer:
-	.  env/bin/activate; python3 get_gainer.py $(choice); rm *gainers.html *gainers.csv
+	.  env/bin/activate; python3 scripts/get_gainer.py $(choice); rm *gainers.html *gainers.csv; mv *gainers*.csv data/;
+
+cron:
+	crontab -l > cron.tmp; cat scripts/crontab_clone >> cron.tmp; cat cron.tmp | crontab -; rm cron.tmp;
 
 clean:
 	rm ygainers* wsjgainers*
@@ -30,5 +33,4 @@ lint:
 
 test: lint
 	. env/bin/activate; pytest -vv tests/
-
 

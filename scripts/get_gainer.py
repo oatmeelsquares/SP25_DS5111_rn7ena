@@ -6,7 +6,7 @@ from datetime import datetime
 
 choice = sys.argv[1]
 
-def get_gainer(choice, timestmap = None):
+def get_gainer(choice, timestamp = None):
     factory = GainerFactory(choice, timestamp)
     downloader = factory.get_downloader()
     normalizer = factory.get_processor()
