@@ -1,3 +1,10 @@
+'''
+    A simple function to write to logs in the correct place for my
+    project.
+
+    Will consider shifting to python logging package, but this small
+    function is all I need for the moment.
+'''
 
 def write_log(choice, message):
     try:
