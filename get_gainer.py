@@ -16,7 +16,7 @@ def get_gainer(choice, timestmap = None):
 
 if choice == 'all':
     all_sources = ['yahoo', 'wsj']
-    timestamp = datetime.now().strftime('%Y%m%d-%H%M')
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M')
 
     for source in all_sources:
         get_gainer(source, timestamp)

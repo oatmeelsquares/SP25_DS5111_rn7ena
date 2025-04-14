@@ -9,7 +9,7 @@ class GainerFactory:
         self.choice = choice
         self.timestamp = timestamp
         if self.timestamp is None:
-            self.timestamp = datetime.now().strftime('%Y%m%d-%H%M')
+            self.timestamp = datetime.now().strftime('%Y%m%d_%H%M')
         write_log('factory', f"Initializing factory with choice '{choice}' at timestamp {self.timestamp}")
 
     def get_downloader(self):
