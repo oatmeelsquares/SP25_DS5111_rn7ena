@@ -1,0 +1,13 @@
+gainers:
+  outputs:
+    dev:
+      account: rja95216
+      database: DATA_SCIENCE
+      password: DS5111rn7ena
+      role: DS5111_DBT
+      schema: RN7ENA
+      threads: 1
+      type: snowflake
+      user: rn7ena@virginia.edu
+      warehouse: COMPUTE_WH
+  target: dev
