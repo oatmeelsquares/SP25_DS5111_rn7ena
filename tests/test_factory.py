@@ -1,6 +1,6 @@
 import pytest
 import sys
-sys.path.append('/home/ubuntu/SP25_DS5111_rn7ena/bin/gainers')
+sys.path.append('./bin/gainers')
 
 from factory import GainerFactory
 from fixtures import choice
