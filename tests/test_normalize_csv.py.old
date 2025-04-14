@@ -1,8 +1,12 @@
-''' This module tests the functionality of bin.normalize_csv.py
+''' 
+    This file only exists to document my earlier work.
+    
+    This module tests the functionality of bin.normalize_csv.py
     
     Author: rn7ena@virginia.edu
 '''
 
+"""
 import sys
 import pandas as pd
 sys.path.append('.')
@@ -30,3 +34,4 @@ def test_concat():
     df = pd.concat([df1, df2], axis = 0)
 
     assert df.shape == right_shape, f'read_gainers returned uncompatible dataframes {str(df)}'
+"""

@@ -1,4 +1,7 @@
-''' This module loads csv files in a standard format for processing gainers data.
+''' 
+    This file only exists to document my work in earlier modules of this class.
+
+    This module loads csv files in a standard format for processing gainers data.
 
     Functions:
         read_gainers() Given a path to a .csv file, loads it in standard format
@@ -7,7 +10,7 @@
     normalized .csv with '_norm' appended to the filename
 '''
 
-
+"""
 import sys
 import pandas as pd
 
@@ -100,3 +103,4 @@ if __name__ == '__main__':
     filename_input = sys.argv[1]
     new_filename = filename_input.replace('.csv', '_norm.csv')
     read_gainers(filename_input).to_csv(new_filename)
+"""
