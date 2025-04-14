@@ -104,6 +104,8 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 
 Hooray! Now you're all ready to start collecting data. You can run `make cron` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm).
 
+Once you have your data collected, you can upload it into snowflake or another system to build SQL tables and do data visualization and analysis!
+
 ## Lab 3: Writing csv normalizer
 
 In this lab, I added the file `bin/normalize_csv.py`, a module that loads csv files and converts them into a standard format for processing gainers data.
@@ -149,4 +151,6 @@ The purpose of this code was to automatically collect gainers data three times p
 
 In this lab, I created ERD.md and ERD.mermaidjs to describe the structure of my snowflake database that I will use to create my dashboard. See [ERD.md](./ERD.md) for more details.
 
+## Labs 9-10: Snowflake
 
+In these labs, I created my snowflake profile and a dbt project in this repo. I updated the tree above to match. I uploaded all of the collected data as seed to my snowflake instance.
