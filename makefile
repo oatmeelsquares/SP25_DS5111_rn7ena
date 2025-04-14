@@ -22,6 +22,9 @@ wsjgainers.csv.old: wsjgainers.html.old
 gainer:
 	.  env/bin/activate; python3 scripts/get_gainer.py $(choice); rm *gainers.html *gainers.csv; mv *gainers*.csv data/;
 
+cron:
+	crontab -l > cron.tmp; cat scripts/crontab_clone >> cron.tmp; cat cron.tmp | crontab -; rm cron.tmp;
+
 clean:
 	rm ygainers* wsjgainers*
 
@@ -30,5 +33,4 @@ lint:
 
 test: lint
 	. env/bin/activate; pytest -vv tests/
-
 
