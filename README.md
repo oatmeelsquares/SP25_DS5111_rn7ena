@@ -23,11 +23,11 @@ Paste your public key into the text box (to find your public key, type `cat id_e
 If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `home/.ssh` directory:
 
 ```
-ubuntu@my-computer:~/.ssh$ ssh -T -i id_ed25519 git@github.com
-Hi oatmeelsquares! You've successfully authenticated, but GitHub does not provide shell access.
+username@my-computer:~/.ssh$ ssh -T -i id_ed25519 git@github.com
+Hi my_username! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-**Note*: If you renamed your private key to something other than `id_ed25519`, use that name instead.
+**Note**: If you renamed your private key to something other than `id_ed25519`, use that name instead.
 
 ### Clone this repo
 
@@ -41,9 +41,9 @@ Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory
 
 In `SP25_DS5111_rn7ena` as your working directory, run `scripts/init.sh` to install desired packages. This includes the headless chrome browser and tools for a python virtual environment.
 
-To setup your virtual environment, run `make update` from the repository directory. This will cause a python virtual environment to be created with all of the packages listed in `requirements.txt` (currently only `pandas` and `lxml`).
+To setup your virtual environment, run `make update` from the repository directory. This will cause a python virtual environment to be created with all of the packages listed in `requirements.txt`.
 
-Run `make ygainers.csv` to test that the chrome headless browser is working. You should see `ygainers.html` and `ygainers.csv` appear in your working directory. `ygainers.csv` should look the same as `example_data/ygainers.csv`, although the numbers will change every day.
+Run `make gainer choice=yahoo` to test that the chrome headless browser is working. `ygainersYYYYMMDD_HHMMSS.csv` should appear in the `data` directory. It should look the same as `example_data/sample_ygainers.csv`, although the numbers will be different.
 
 At this point, you can run `tree --gitignore .` from the root of the repo and your output should look like this:
 
@@ -55,7 +55,6 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 ├── README.md
 ├── bin
 │   ├── gainers
-│   │   ├── __pycache__
 │   │   ├── abstractclasses.py
 │   │   ├── base.py
 │   │   ├── factory.py
@@ -63,38 +62,47 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 │   │   ├── wsj.py
 │   │   └── yahoo.py
 │   └── normalize_csv.py.old
-├── crontab_clone
+├── data
+│   └── ygainers_YYYYMMDD_HHMMSS.csv
 ├── example_data
 │   ├── sample_wsjgainers.csv
 │   └── sample_ygainers.csv
-├── get_gainer.py
 ├── makefile
 ├── projects
-│   ├── gainers
-│   │   ├── README.md
-│   │   ├── analyses
-│   │   ├── dbt_project.yml
-│   │   ├── macros
-│   │   ├── models
-│   │   │   └── example
-│   │   │       ├── my_first_dbt_model.sql
-│   │   │       ├── my_second_dbt_model.sql
-│   │   │       └── schema.yml
-│   │   ├── seeds
-│   │   ├── snapshots
-│   │   └── tests
-│   └── logs
+│   └── gainers
+│       ├── README.md
+│       ├── analyses
+│       ├── dbt_project.yml
+│       ├── macros
+│       ├── models
+│       │   └── example
+│       │       ├── ende.sql
+│       │       ├── enfr.sql
+│       │       ├── french.sql
+│       │       ├── my_first_dbt_model.sql
+│       │       ├── my_second_dbt_model.sql
+│       │       └── schema.yml
+│       ├── seeds
+│       │   └── numbers.csv
+│       ├── snapshots
+│       └── tests
 ├── pylintrc
 ├── requirements.txt
 ├── scripts
-│   └── init.sh
+│   ├── crontab_clone
+│   ├── get_gainer.py
+│   ├── init.sh
+│   └── profiles.yml
 └── tests
     ├── fixtures.py
     ├── test_factory.py
     ├── test_normalize_csv.py.old
     └── version_tests.py
-
 ```
+
+### Automatic data collection
+
+Hooray! Now you're all ready to start collecting data. You can run `make cron` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm).
 
 ## Lab 3: Writing csv normalizer
 
@@ -140,3 +148,5 @@ The purpose of this code was to automatically collect gainers data three times p
 ## Lab 8: Database Design
 
 In this lab, I created ERD.md and ERD.mermaidjs to describe the structure of my snowflake database that I will use to create my dashboard. See [ERD.md](./ERD.md) for more details.
+
+
