@@ -1,5 +1,5 @@
 erDiagram
-    RAW }|--|| SYMBOL_STATS: summarizes
+    RAW }|--|{ SYMBOL_STATS: summarizes
     RAW }|--|| TIME_STATS: summarizes
 
     CHANGE_RATIO_SCATTER ||--|| RAW : represents
