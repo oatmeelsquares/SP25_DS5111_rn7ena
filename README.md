@@ -75,13 +75,19 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 │       ├── dbt_project.yml
 │       ├── macros
 │       ├── models
-│       │   └── example
-│       │       ├── ende.sql
-│       │       ├── enfr.sql
-│       │       ├── french.sql
-│       │       ├── my_first_dbt_model.sql
-│       │       ├── my_second_dbt_model.sql
-│       │       └── schema.yml
+│       │   ├── best_time_bar.sql
+│       │   ├── change_ratio_scatter.sql
+│       │   ├── example
+│       │   │   ├── ende.sql
+│       │   │   ├── enfr.sql
+│       │   │   ├── french.sql
+│       │   │   ├── my_first_dbt_model.sql
+│       │   │   ├── my_second_dbt_model.sql
+│       │   │   └── schema.yml
+│       │   ├── gainers.sql
+│       │   ├── symbol_stats.sql
+│       │   ├── time_stats.sql
+│       │   └── top_freq_hist.sql
 │       ├── seeds
 │       │   └── numbers.csv
 │       ├── snapshots
