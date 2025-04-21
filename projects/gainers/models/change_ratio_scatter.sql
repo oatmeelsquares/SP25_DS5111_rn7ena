@@ -1,0 +1,5 @@
+{{ config(materialized='table') }}
+
+SELECT PRICE, PRICE_PERCENT_CHANGE
+FROM DATA_SCIENCE.RN7ENA.GAINERS
+

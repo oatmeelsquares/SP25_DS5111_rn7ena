@@ -1,0 +1,5 @@
+{{ config(materialized='table') }}
+
+SELECT SYMBOL, COUNT
+FROM DATA_SCIENCE.RN7ENA.SYMBOL_STATS
+ORDER BY COUNT

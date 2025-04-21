@@ -1,0 +1,5 @@
+{{ config(materialized='table') }}
+
+SELECT TIME, AVG_PERCENT_CHANGE
+FROM TIME_STATS
+ORDER BY TIME
