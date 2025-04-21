@@ -34,3 +34,5 @@ lint:
 test: lint
 	. env/bin/activate; pytest -vv tests/
 
+process:
+	. env/bin/activate; python3 scripts/process_data.py;
