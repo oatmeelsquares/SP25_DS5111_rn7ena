@@ -15,11 +15,11 @@ The data was collected from Yahoo and the Wall Street Journal gainers pages:
 - https://finance.yahoo.com/markets/stocks/gainers/?start=0&count=200
 - https://www.wsj.com/market-data/stocks/us/movers
 
-Data was normalized using a factory design pattern. Yahoo data needed to be stripped of plus signs and WSJ symbols needed to be extracted from longer company names. Both processors returned normalized data with four fields: symbol, price, price change, and percent change.
+Data was normalized using a factory design pattern. Yahoo data needed to be stripped of plus signs and WSJ symbols needed to be extracted from longer company names. Both processors returned normalized data with four fields: symbol, price, price_change, and price_percent_change.
 
-Data will be processed into intermediate tables -- one aggregated by symbol, the other by time of day -- so that data can be easily drawn.
+Data was be processed into intermediate tables -- one aggregated by symbol, the other by time of day -- so that the final tables can be easily drawn.
 
-The GAINERS table will include the raw data without duplicates under the assumption that if there are two lines that are exactly the same, they probably came from the two different sources and represent the same information. Data cleaning was limited, however, and duplicates may still exist due to tiny fluctuations in the seconds between collection by one source and another. This may skew the data, especially the count plots. However, since the purpose of this exercise is mainly to practice using snowflake and not to ensure total data integrity, the report assumes no friction.
+The GAINERS table includes the raw data without duplicates under the assumption that if there are two lines that are exactly the same, they probably came from the two different sources and represent the same information. Data cleaning was limited, however, and duplicates may still exist due to tiny fluctuations in the seconds between collection by one source and another. This may skew the data, especially the count plots. However, since the purpose of this exercise is mainly to practice using snowflake and not to ensure total data integrity, the report assumes no friction.
 
 The final tables map directly into the plots pictured below. Each of the final tables produces a plot that gives direct insights into one of the three proposed questions. They describe the data in a visual way so as to gain useful insights from the raw data. The visualizations were produced directly from the final tables in Snowflake.
 
