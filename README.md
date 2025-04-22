@@ -160,3 +160,7 @@ In this lab, I created ERD.md and ERD.mermaidjs to describe the structure of my 
 ## Labs 9-10: Snowflake
 
 In these labs, I created my snowflake profile and a dbt project in this repo. I updated the tree above to match. I uploaded all of the collected data as seed to my snowflake instance.
+
+## Final product
+
+I wrote new models for all intermediate and final tables discussed in [ERD.md](./ERD.md). The final write-up is available in [Final_Report.md](./Final_Report.md).
