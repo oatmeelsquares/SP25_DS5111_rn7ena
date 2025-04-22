@@ -25,6 +25,8 @@ The final tables will map directly into plots, which are described in the table 
 
 ## Data Tables
 
+![](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/figures/ERD.png)
+
 The intermediate tables include:
 
 - GAINERS
