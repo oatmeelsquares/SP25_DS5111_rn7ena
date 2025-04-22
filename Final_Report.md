@@ -1,4 +1,4 @@
-# Title
+# Exploring Stock Data with Snowflake
 
 ## Purpose
 
