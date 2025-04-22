@@ -1,7 +1,7 @@
 erDiagram
-    RAW }|--|{ SYMBOL_STATS: summarizes
-    RAW }|--|| TIME_STATS: summarizes
+    GAINERS }|--|| SYMBOL_STATS: summarizes
+    GAINERS }|--|| TIME_STATS: summarizes
 
-    CHANGE_RATIO_SCATTER ||--|| RAW : represents
-    BEST_TIME_BAR ||--|{ TIME_STATS : represents
+    CHANGE_RATIO_SCATTER ||--|| GAINERS : represents
+    BEST_TIME_BAR ||--|| TIME_STATS : represents
     TOP_FREQ_BAR ||--|| SYMBOL_STATS : represents
