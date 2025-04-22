@@ -19,9 +19,9 @@ Data was normalized using a factory design pattern. Yahoo data needed to be stri
 
 Data will be processed into intermediate tables -- one aggregated by symbol, the other by time of day -- so that data can be easily drawn.
 
-The GAINERS table will include the raw data without duplicates under the assumption that if both sources have overlapping symbols, the reported numbers will be the same. This removes the possiblity of slight discrepencies based on the few-second time between scraping the two different sources.
+The GAINERS table will include the raw data without duplicates under the assumption that if there are two lines that are exactly the same, they probably came from the two different sources and represent the same information. Data cleaning was limited, however, and duplicates may still exist due to tiny fluctuations in the seconds between collection by one source and another. This may skew the data, especially the count plots. However, since the purpose of this exercise is mainly to practice using snowflake and not to ensure total data integrity, the plan assumes no friction.
 
-The final tables will map directly into plots, which are described in the table titles. Each of the final tables will produce a plot that gives direct insights into one of the four proposed questions. They describe the data in a visual way so as to gain useful insights from the raw data.
+The final tables will map directly into plots, which are described in the table titles. Each of the final tables will produce a plot that gives direct insights into one of the three proposed questions. They describe the data in a visual way so as to gain useful insights from the raw data.
 
 ## Data Tables
 
