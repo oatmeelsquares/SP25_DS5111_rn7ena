@@ -39,7 +39,7 @@ This scatterplot shows the growth of each stock against its price. Based on the 
 This horizontal bar chart shows the top 10 gainers by frequency. These stocks may offer more growth than others, however it is important to note that this chart does not account the *magnitude* of growth, so gains could be very small and offset by days of loss.
 
 
-### Best Time of Day to Buy Stocks
+### Percent Change Throughout the Day
 
 ![](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/figures/best_time_bar.png)
 
