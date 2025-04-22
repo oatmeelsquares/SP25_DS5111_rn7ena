@@ -25,16 +25,26 @@ The final tables map directly into the plots pictured below. Each of the final t
 
 ## Results
 
-### Relationship Between STock Price and Growth
+### Relationship Between Stock Price and Growth
 
 ![](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/figures/change_ratio_scatter.png)
+
+This scatterplot shows the growth of each stock against its price. Based on the scatterplot, there does not seem to be any strong correlation between the raw price of a stock and its performance in the market.
+
+
+### High-Frequency Gainers
+
+![](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/figures/top_freq_bar.png)
+
+This horizontal bar chart shows the top 10 gainers by frequency. These stocks may offer more growth than others, however it is important to note that this chart does not account the *magnitude* of growth, so gains could be very small and offset by days of loss.
 
 
 ### Best Time of Day to Buy Stocks
 
 ![](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/figures/best_time_bar.png)
 
+This bar chart shows how much growth is recorded at each time of day. All growth is measured from the start of the day, so the difference between bars is what's important to look at, not the raw values themselves. With that in mind, it looks like the biggest gains happen at market open and they peter out during the day.
 
-### High-Frequency Gainers
+## Conclusion
 
-![](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/figures/top_freq_bar.png)
+Stock trading is gambling! Do it for fun, but if you want your money to grow reliably, buy ETFs and make sure your portfolio is diversified.
