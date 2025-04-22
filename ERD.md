@@ -27,6 +27,8 @@ The final tables will map directly into plots, which are described in the table 
 
 ![](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/figures/ERD.png)
 
+This ER diagram was rendered using [mermaidjs.live](https://mermaid.live/edit#pako:eNqtUcFOwzAM_RXL4gBSKrWIsa0HTly5sBsLB6_x2ow2qdJkWjXt30mbji8gh5f37Bc7sq9YWcVYojQQz2WsGnI-O7CnFPHatwwSd9TyAJ98ZhNY3u0ZXfQA-xMZAUc-COjICaDeTWwUcApmgjbGQi1g4F6ArbwAY88CFFffqdCYCklcGsCjNvDwJBFe8jyHLHuDoogsuQ_kYL-KUsDrjOvVhJvnCbczL_J0FXlSKTXjZs6s_54vX2i14f-sigI7dh1pFad7nXpI9A13cXhlpIrczzTGW_RR8HY3mgpL7wILDL0iz--aakfdPchKe-s-0rbmpQl0NtQNlkdqh-joyXxZ2y369gs444Ie) with the code found in [scripts/ERD.mermaidjs](https://github.com/oatmeelsquares/SP25_DS5111_rn7ena/blob/main/scripts/ERD.mermaidjs).
+
 The intermediate tables include:
 
 - GAINERS
