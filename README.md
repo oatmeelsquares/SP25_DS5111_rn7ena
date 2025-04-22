@@ -163,4 +163,4 @@ In these labs, I created my snowflake profile and a dbt project in this repo. I 
 
 ## Final product
 
-I wrote new models for all intermediate and final tables discussed in [ERD.md](./ERD.md). The final write-up is available in [Final_Report.md](./Final_Report.md).
+I wrote new dbt models for all intermediate and final tables discussed in [ERD.md](./ERD.md). The final write-up is available in [Final_Report.md](./Final_Report.md).
