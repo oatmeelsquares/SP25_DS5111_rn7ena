@@ -10,6 +10,20 @@ To initialize a new vm, please follow these steps:
 
 run `sudo apt update`
 
+### Setup auto-shutdown
+
+If you're like me and always leave your vm open, save some costs by setting up auto-shutdown based on inactivity:
+
+1. Navigate to `/etc/systemd/`
+2. Use `sudo` and an editor of your choice to edit the file `logind.conf`
+3. Uncomment the lines that start with
+    ```
+    IdleAction=hibernate
+    IdleActionSec=120min
+    ```
+4. Replace `hibernate` with `poweroff`
+5. Replace `120min` with `30min` or however long you want the machine to wait before powering off due to inactivity
+
 ### Setup ssh key
 
 run `ssh-keygen -t ed25519 -C "youremail@domain.com"` and set a password if you want
