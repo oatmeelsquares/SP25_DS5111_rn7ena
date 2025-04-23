@@ -6,7 +6,7 @@ models:
     description: 'The raw data from both gainers sources'
     columns:
       - name: symbol
-        description: 'Part of a composite primary key with timestamp for this table'
+        description: 'Part of a composite primary key with timestamp for this table; this fails the not_null test because I need to edit the loader code'
         data_tests:
           - not_null
       - name: timestamp
@@ -27,7 +27,7 @@ models:
     description: 'Intermediate table aggregating stats by ticker symbol'
     columns:
       - name: symbol
-        description: 'Primary key for this table'
+        description: 'Primary key for this table; this fails the not_null test because I need to edit the loader code'
         data_tests:
           - unique
           - not_null
@@ -48,7 +48,7 @@ models:
     description: 'A table to be used directly for a barplot, derived from symbol_stats'
     columns:
       - name: symbol
-        description: 'All (unique) symbols from all data points gathered'
+        description: 'All (unique) symbols from all data points gathered; this fails the not_null test because I need to edit the loader code'
         data_tests:
           - unique
           - not_null
