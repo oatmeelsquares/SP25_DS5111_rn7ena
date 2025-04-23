@@ -45,7 +45,7 @@ models:
           - not_null
 
   - name: top_freq_hist
-  - description: 'A table to be used directly for a barplot, derived from symbol_stats'
+    description: 'A table to be used directly for a barplot, derived from symbol_stats'
     columns:
       - name: symbol
         description: 'All (unique) symbols from all data points gathered'
