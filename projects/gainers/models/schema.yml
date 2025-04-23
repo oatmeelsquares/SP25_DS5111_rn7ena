@@ -1,0 +1,72 @@
+
+version: 2
+
+models:
+  - name: gainers
+    description: 'The raw data from both gainers sources'
+    columns:
+      - name: symbol
+        description: 'Part of a composite primary key with timestamp for this table'
+        data_tests:
+          - not_null
+      - name: timestamp
+        description: 'Part of a composite primary key with symbol for this table'
+        data_tests:
+          - not_null
+            
+  - name: time_stats
+    description: 'Intermediate table aggregating stats by time of day'
+    columns:
+      - name: time
+        description: 'Primary key for this table'
+        data_tests:
+          - unique
+          - not_null
+
+  - name: symbol_stats
+    description: 'Intermediate table aggregating stats by ticker symbol'
+    columns:
+      - name: symbol
+        description: 'Primary key for this table'
+        data_tests:
+          - unique
+          - not_null
+
+  - name: change_ratio_scatter 
+    description: 'A table to be used directly for a scatterploti, derived from gainers'
+    columns:
+      - name: price
+        description: 'All prices for all data points gathered'
+        data_tests:
+          - not_null
+      - name: price_percent_change
+        description: 'All percent changes for all data points gathered'
+        data_tests:
+          - not_null
+
+  - name: top_freq_hist
+  - description: 'A table to be used directly for a barplot, derived from symbol_stats'
+    columns:
+      - name: symbol
+        description: 'All (unique) symbols from all data points gathered'
+        data_tests:
+          - unique
+          - not_null
+      - name: count
+        description: 'Frequency counts of how many times each symbol appears in the data'
+        data_tests:
+          - not_null
+
+  - name: best_time_bar
+    description: 'A table to be used directly for a barplot, derived from time_stats'
+    columns:
+      - name: time
+        description: 'Time of day'
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['morning', 'midday', 'evening']
+      - name: avg_percent_change
+        description: 'Mean percent change, aggregated by time of day'
+        data_tests:
+          - not_null
