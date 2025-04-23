@@ -16,7 +16,7 @@ If you're like me and always leave your vm open, save some costs by setting up a
 
 1. Navigate to `/etc/systemd/`
 2. Use `sudo` and an editor of your choice to edit the file `logind.conf`
-3. Uncomment the lines that start with
+3. Uncomment the lines that look like this:
     ```
     IdleAction=hibernate
     IdleActionSec=120min
