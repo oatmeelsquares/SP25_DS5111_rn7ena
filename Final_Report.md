@@ -1,22 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Exploring Stock Data with Snowflake
 
 ## Purpose
