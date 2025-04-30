@@ -79,9 +79,9 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 │   │   └── yahoo.py
 │   └── normalize_csv.py.old
 ├── data
-├── example_data
-│   ├── sample_wsjgainers.csv
-│   └── sample_ygainers.csv
+│   └── example_data
+│       ├── sample_wsjgainers.csv
+│       └── sample_ygainers.csv
 ├── figures
 │   ├── ERD.png
 │   ├── best_time_bar.png
