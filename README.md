@@ -66,7 +66,7 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 ```
 .
 ├── ERD.md
-├── ERD.mermaidjs
+├── Final_Report.md
 ├── LICENSE
 ├── README.md
 ├── bin
@@ -79,10 +79,14 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 │   │   └── yahoo.py
 │   └── normalize_csv.py.old
 ├── data
-│   └── ygainers_YYYYMMDD_HHMMSS.csv
 ├── example_data
 │   ├── sample_wsjgainers.csv
 │   └── sample_ygainers.csv
+├── figures
+│   ├── ERD.png
+│   ├── best_time_bar.png
+│   ├── change_ratio_scatter.png
+│   └── top_freq_bar.png
 ├── makefile
 ├── projects
 │   └── gainers
@@ -101,6 +105,7 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 │       │   │   ├── my_second_dbt_model.sql
 │       │   │   └── schema.yml
 │       │   ├── gainers.sql
+│       │   ├── schema.yml
 │       │   ├── symbol_stats.sql
 │       │   ├── time_stats.sql
 │       │   └── top_freq_hist.sql
@@ -111,9 +116,11 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 ├── pylintrc
 ├── requirements.txt
 ├── scripts
+│   ├── ERD.mermaidjs
 │   ├── crontab_clone
 │   ├── get_gainer.py
 │   ├── init.sh
+│   ├── process_data.py
 │   └── profiles.yml
 └── tests
     ├── fixtures.py
