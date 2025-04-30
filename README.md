@@ -131,7 +131,7 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 
 ### Automatic data collection
 
-Hooray! Now you're all ready to start collecting data. You can run `make cron` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm). If `make cron` gives you an error that no cron exists, type `crontab -e`, follow the prompts, then exit the crontab and try again.
+Hooray! Now you're all ready to start collecting data. You can run `make cron` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm).
 
 Once you have your data collected, you can upload it into snowflake or another system to build SQL tables and do data visualization and analysis!
 
