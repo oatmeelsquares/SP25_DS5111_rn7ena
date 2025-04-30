@@ -40,7 +40,7 @@ class GainerProcess(ABC):
         old_price = self.gainers_df.price - self.gainers_df.price_change
         percent_change_calculated = (self.gainers_df.price - old_price) / old_price * 100
         assert (self.gainers_df.price_percent_change - percent_change_calculated < 1).all(), \
-                'Columns do not add up' + str(test_df)
+                'Columns do not add up' + str(self.gainers_df)
 
     def normalize(self):
         write_log(self.choice, f'Reading {self.name}.html')
