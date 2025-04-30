@@ -36,7 +36,7 @@ Paste your public key into the text box. To find your public key, type `cat ~/.s
 
 Click "Add SSH Key" to save the key
 
-If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `home/.ssh` directory:
+If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `~/.ssh` directory:
 
 ```
 username@my-computer:~/.ssh$ ssh -T -i id_ed25519 git@github.com
@@ -47,11 +47,11 @@ Hi my_username! You've successfully authenticated, but GitHub does not provide s
 
 ### Clone this repo
 
-In the directory you want to clone the repo in, enter the command:
+Enter the command:
 ```
-git clone git@github.com:oatmeelsquares/SP25_DS5111_rn7ena.git
+cd; git clone git@github.com:oatmeelsquares/SP25_DS5111_rn7ena.git
 ```
-Now, if you type `ls` you should see `SP25_DS5111_rn7ena` in your chosen directory. 
+Now, if you type `ls` you should see `SP25_DS5111_rn7ena` in your home directory. 
 
 ### Other setup
 
@@ -132,6 +132,14 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 ### Automatic data collection
 
 Hooray! Now you're all ready to start collecting data. You can run `make cron` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm).
+
+To check that your crontab was setup successfully, type `crontab -l`. You should see something like this near the bottom of the output:
+
+```
+31 09 * * 1-5 cd /home/ubuntu/SP25_DS5111_rn7ena/; make gainer choice=all
+30 12 * * 1-5 cd /home/ubuntu/SP25_DS5111_rn7ena/; make gainer choice=all
+01 16 * * 1-5 cd /home/ubuntu/SP25_DS5111_rn7ena/; make gainer choice=all
+```
 
 Once you have your data collected, you can upload it into snowflake or another system to build SQL tables and do data visualization and analysis!
 
