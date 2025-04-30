@@ -4,7 +4,7 @@ Coursework for DS 5111: Software and Automation Skills in partial fulfillment of
 
 ## Lab 2: Automating initializing a VM
 
-To initialize a new vm, please follow these steps:
+To initialize a new Ubuntu vm, please follow these steps:
 
 ### Access latest packages
 
