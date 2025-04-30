@@ -133,12 +133,12 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 
 Hooray! Now you're all ready to start collecting data. You can run `make cron` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm).
 
-To check that your crontab was setup successfully, type `crontab -l`. You should see something like this near the bottom of the output:
+To check that your crontab was setup successfully, type `crontab -l`. You should see something like this at the bottom of the output:
 
 ```
-31 09 * * 1-5 cd /home/ubuntu/SP25_DS5111_rn7ena/; make gainer choice=all
-30 12 * * 1-5 cd /home/ubuntu/SP25_DS5111_rn7ena/; make gainer choice=all
-01 16 * * 1-5 cd /home/ubuntu/SP25_DS5111_rn7ena/; make gainer choice=all
+31 09 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
+30 12 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
+01 16 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
 ```
 
 Once you have your data collected, you can upload it into snowflake or another system to build SQL tables and do data visualization and analysis!
@@ -177,9 +177,9 @@ In lab 6, I refactored my code to conform to the factory design pattern. I updat
 In lab 7, I added a cron job with the following code:
 
 ```
-31 09 * * 1-5 cd this_repo; make gainer choice=all
-30 12 * * 1-5 cd this_repo; make gainer choice=all
-01 16 * * 1-5 cd this_repo; make gainer choice=all
+31 09 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
+30 12 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
+01 16 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
 ```
 
 The purpose of this code was to automatically collect gainers data three times per day, every day for at least one week. I now have many timestamped files with gainers data from my two different sources, though I have added them to the gitignore.
