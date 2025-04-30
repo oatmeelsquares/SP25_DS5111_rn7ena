@@ -176,5 +176,5 @@ cython_debug/
 ygainers*
 wsjgainers*
 gainers.log
-data/*
+data/*.csv
 logs
