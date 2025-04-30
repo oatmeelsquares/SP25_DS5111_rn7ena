@@ -51,7 +51,7 @@ In the directory you want to clone the repo in, enter the command:
 ```
 git clone git@github.com:oatmeelsquares/SP25_DS5111_rn7ena.git
 ```
-Now, if you type `ls` you should see `SP_DS5111_rn7ena` in your chosen directory. 
+Now, if you type `ls` you should see `SP25_DS5111_rn7ena` in your chosen directory. 
 
 ### Other setup
 
