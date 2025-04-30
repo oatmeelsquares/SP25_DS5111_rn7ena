@@ -32,7 +32,7 @@ Go to your settings in GitHub, and click `SSH and GPG Keys` in the toolbar
 
 Click `New SSH key` and give it a title to match your machine
 
-Paste your public key into the text box (to find your public key, type `cat id_ed25519.pub`* into your machine)
+Paste your public key into the text box. To find your public key, type `cat ~/.ssh/id_ed25519.pub` into your machine)
 
 If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `home/.ssh` directory:
 
