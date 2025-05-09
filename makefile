@@ -36,3 +36,6 @@ test: lint
 
 process:
 	. env/bin/activate; python3 scripts/process_data.py;
+
+reset:
+	rm ~/.ssh/id*; rm -rf ~/SP25_DS5111_rn7ena;
