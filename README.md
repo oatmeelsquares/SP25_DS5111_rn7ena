@@ -47,15 +47,11 @@ into your machine's console
 
 Click "Add SSH Key" to save the key
 
-If you added your key successfully, you should see a message with your GitHub username after typing 
+If you added your key successfully, then after typing 
 ```
 ssh -T -i ed25519 git@github.com
 ```
-:
-```
-username@my-computer:~/.ssh$ ssh -T -i id_ed25519 git@github.com
-Hi my_username! You've successfully authenticated, but GitHub does not provide shell access.
-```
+you should see this message with your GitHub username: `Hi my_username! You've successfully authenticated, but GitHub does not provide shell access.`
 
 **Note**: If you renamed your private key to something other than `id_ed25519`, use that name instead.
 
