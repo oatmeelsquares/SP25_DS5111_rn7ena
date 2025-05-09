@@ -8,7 +8,10 @@ To initialize a new Ubuntu vm, please follow these steps:
 
 ### Access latest packages
 
-run ```sudo apt update; sudo apt upgrade```
+run 
+```
+sudo apt update; sudo apt upgrade
+```
 
 ### Setup auto-shutdown
 
