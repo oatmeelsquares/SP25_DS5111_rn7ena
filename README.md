@@ -17,10 +17,7 @@ sudo apt update; sudo apt upgrade
 
 If you're like me and always leave your AWS EC2 instance open, save some costs by setting up auto-shutdown based on inactivity:
 
-1. Navigate to
-   ```
-   /etc/systemd/
-   ```
+1. Navigate to `/etc/systemd/`
 3. Use `sudo` and an editor of your choice to edit the file `logind.conf`
 4. Uncomment the lines that look like this:
     ```
