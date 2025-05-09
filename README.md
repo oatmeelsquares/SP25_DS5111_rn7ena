@@ -81,7 +81,11 @@ Run
 ```
 make gainer choice=yahoo
 ```
- to test that the chrome headless browser is working. `ygainersYYYYMMDD_HHMMSS.csv` should appear in the `data` directory. It should look the same as `example_data/sample_ygainers.csv`, although the numbers will be different.
+to test that the chrome headless browser is working. `ygainersYYYYMMDD_HHMMSS.csv` should appear in the `data` directory. It should look the same as `example_data/sample_ygainers.csv`, although the numbers will be different. You can also try
+```
+make gainer choice=wsj
+```
+It will take a little longer!
 
 At this point, you can run 
 ```
@@ -167,7 +171,7 @@ To check that your crontab was setup successfully, type
 ```
 crontab -l
 ```
-You should see something like this at the bottom of the output:
+You should see these three entries at the bottom of the output:
 
 ```
 31 09 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
