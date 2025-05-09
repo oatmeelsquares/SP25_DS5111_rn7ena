@@ -8,13 +8,13 @@ To initialize a new Ubuntu vm, please follow these steps:
 
 ### Access latest packages
 
-run `sudo apt update`
+run ```sudo apt update; sudo apt upgrade```
 
 ### Setup auto-shutdown
 
 If you're like me and always leave your AWS EC2 instance open, save some costs by setting up auto-shutdown based on inactivity:
 
-1. Navigate to `/etc/systemd/`
+1. Navigate to ```/etc/systemd/```
 2. Use `sudo` and an editor of your choice to edit the file `logind.conf`
 3. Uncomment the lines that look like this:
     ```
@@ -26,17 +26,17 @@ If you're like me and always leave your AWS EC2 instance open, save some costs b
 
 ### Setup ssh key
 
-run `ssh-keygen -t ed25519 -C "youremail@domain.com"` and set a password if you want
+run ```ssh-keygen -t ed25519 -C "youremail@domain.com"``` and set a password if you want
 
 Go to your settings in GitHub, and click `SSH and GPG Keys` in the toolbar
 
 Click `New SSH key` and give it a title to match your machine
 
-Paste your public key into the text box. To find your public key, type `cat ~/.ssh/id_ed25519.pub` into your machine)
+Paste your public key into the text box. To find your public key, type ```cat ~/.ssh/id_ed25519.pub``` into your machine)
 
 Click "Add SSH Key" to save the key
 
-If you added your key successfully, you should see a message with your GitHub username after typing `ssh -T -i ed25519 git@github.com` in your `~/.ssh` directory:
+If you added your key successfully, you should see a message with your GitHub username after typing ```ssh -T -i ed25519 git@github.com```:
 
 ```
 username@my-computer:~/.ssh$ ssh -T -i id_ed25519 git@github.com
@@ -55,13 +55,13 @@ Now, if you type `ls` you should see `SP25_DS5111_rn7ena` in your home directory
 
 ### Other setup
 
-In `SP25_DS5111_rn7ena` as your working directory, run `scripts/init.sh` to install desired packages. This includes the headless chrome browser and tools for a python virtual environment.
+In `SP25_DS5111_rn7ena` as your working directory, run ```scripts/init.sh``` to install desired packages. This includes the headless chrome browser and tools for a python virtual environment.
 
-To setup your virtual environment, run `make update` from the repository directory. This will cause a python virtual environment to be created with all of the packages listed in `requirements.txt`.
+To setup your virtual environment, run ```make update``` from the repository directory. This will cause a python virtual environment to be created with all of the packages listed in `requirements.txt`.
 
-Run `make gainer choice=yahoo` to test that the chrome headless browser is working. `ygainersYYYYMMDD_HHMMSS.csv` should appear in the `data` directory. It should look the same as `example_data/sample_ygainers.csv`, although the numbers will be different.
+Run ```make gainer choice=yahoo``` to test that the chrome headless browser is working. `ygainersYYYYMMDD_HHMMSS.csv` should appear in the `data` directory. It should look the same as `example_data/sample_ygainers.csv`, although the numbers will be different.
 
-At this point, you can run `tree --gitignore .` from the root of the repo and your output should look like this:
+At this point, you can run ```tree --gitignore .``` from the root of the repo and your output should look like this:
 
 ```
 .
@@ -131,9 +131,9 @@ At this point, you can run `tree --gitignore .` from the root of the repo and yo
 
 ### Automatic data collection
 
-Hooray! Now you're all ready to start collecting data. You can run `make cron` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm).
+Hooray! Now you're all ready to start collecting data. You can run ```make cron``` to setup your machine to collect gainers data from all sources (Yahoo and Wall Street Journal) three times every weekday (at 9:31am, 12:30pm and 4:01pm).
 
-To check that your crontab was setup successfully, type `crontab -l`. You should see something like this at the bottom of the output:
+To check that your crontab was setup successfully, type ```crontab -l```. You should see something like this at the bottom of the output:
 
 ```
 31 09 * * 1-5 cd ~/SP25_DS5111_rn7ena/; make gainer choice=all
