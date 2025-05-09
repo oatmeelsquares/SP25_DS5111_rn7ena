@@ -43,7 +43,7 @@ Paste your public key into the text box. To find your public key, type
 ```
 cat ~/.ssh/id_ed25519.pub
 ```
- into your machine)
+into your machine's console
 
 Click "Add SSH Key" to save the key
 
