@@ -49,7 +49,7 @@ Click "Add SSH Key" to save the key
 
 If you added your key successfully, then after typing 
 ```
-ssh -T -i ed25519 git@github.com
+ssh -T -i id_ed25519 git@github.com
 ```
 you should see this message with your GitHub username: `Hi my_username! You've successfully authenticated, but GitHub does not provide shell access.`
 
