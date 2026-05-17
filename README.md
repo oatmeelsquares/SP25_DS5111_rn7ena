@@ -1,8 +1,8 @@
-# DS 5111: Software and Automation Skills
+# Automating collection and analysis of stock data using AWS, dbt, and Snowflake
 
-Coursework for DS 5111: Software and Automation Skills in partial fulfillment of the UVA School of Data Science Master's in Data Science.
+For this project, I setup an Ubuntu vm on AWS to automatically collect stock data from Yahoo! Finance and the WSJ. The following instructions will enable you to duplicate this process on your Ubuntu machine. I also used dbt and Snowflake to transform and analyze the data, the steps of which are not documented here.
 
-## Lab 2: Automating initializing a VM
+---
 
 To initialize a new Ubuntu vm, please follow these steps:
 
@@ -180,6 +180,14 @@ You should see these three entries at the bottom of the output:
 ```
 
 Once you have your data collected, you can upload it into snowflake or another system to build SQL tables and do data visualization and analysis!
+
+
+---
+# Documentation of work
+
+## Lab 2: Automating initializing a VM
+
+Wrote preliminary data collection, makefile, and README.
 
 ## Lab 3: Writing csv normalizer
 
